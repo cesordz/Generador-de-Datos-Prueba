@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "generador-datos-prueba"
+version = "0.1.0"
+description = "Generador de datos de prueba para QA"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+]
+
+[project.scripts]
+datos-prueba = "generador_datos_prueba.cli:main"
+casos-borde = "generador_datos_prueba.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"generador_datos_prueba" = ["datos/*.json"]
